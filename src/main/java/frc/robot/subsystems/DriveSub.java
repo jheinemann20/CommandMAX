@@ -69,4 +69,9 @@ public class DriveSub extends Subsystem {
     SmartDashboard.putNumber("Rear Left", rL.get());
     SmartDashboard.putNumber("Rear Right", rR.get());
   }
+
+  // Uses existing Mecanum drive as arcade drive by removing strafe axis
+  public void myArcadeDrive(double ySpeed, double xSpeed) {
+    myDrive.driveCartesian(ySpeed, 0, xSpeed);
+  }
 }
