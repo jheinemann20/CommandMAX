@@ -10,16 +10,8 @@
 
 package frc.robot;
 
-/**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
- */
-import frc.robot.commands.*;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.*;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
   //// CREATING BUTTONS
@@ -52,64 +44,16 @@ public class OI {
 
   //Instance Variables
   public Joystick
-    driveJoystick = new Joystick(0),
-    elevatorJoystick = new Joystick(1);
+    myJoy = Robot.joySub.myJoy,
+    myJoy2 = Robot.joySub.myJoy2;
 
-  public static DoubleSolenoid
-    shifter = new DoubleSolenoid(0, 1);
-
-  private static DigitalInput rightEye;
-  private static DigitalInput midEye;
-  private static DigitalInput leftEye;
-
-  private static double xValue;
-  private static double yValue;
-  private static double twistValue;
+  public JoystickButton
+    shiftButton = new JoystickButton(myJoy, 1);
 
 	// OI constructor method
-  public OI() 
-  {  
-
-  }
-
-  public double getXValue()
+  public OI()
   {
-    return xValue;
-  }
-
-  public double getYValue()
-  {
-    return yValue;
-  }
-
-  public double getTwistValue()
-  {
-    return twistValue;
-  }
-
-  public Joystick getDriveJoystick()
-  {
-    return driveJoystick;
-  }
-
-  public Joystick getElevatorstick()
-  {
-    return elevatorJoystick;
-  }
-
-  public boolean getLeftEye() 
-  {
-    return leftEye.get();
-  }
-
-  public boolean getRightEye()
-  {
-    return rightEye.get();
-  }
-
-  public boolean getMidEye()
-  {
-    return midEye.get();
+    shiftButton.whenPressed(command);
   }
 
 }

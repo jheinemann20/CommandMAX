@@ -13,6 +13,9 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveSub;
+import frc.robot.subsystems.EyeSub;
+import frc.robot.subsystems.ShifterSub;
+import frc.robot.subsystems.JoySub;
 
 
 /**
@@ -24,7 +27,10 @@ import frc.robot.subsystems.DriveSub;
  */
 public class Robot extends TimedRobot {
   //public static DriveSub m_subsystem = new DriveSub();
-  public static DriveSub driveSub = new DriveSub();
+  public static DriveSub mecDriveSub = new DriveSub();
+  public static EyeSub eyeSub = new EyeSub();
+  public static ShifterSub shifterSub = new ShifterSub();
+  public static JoySub joySub = new JoySub();
   public static OI oi;
 
   Command m_autonomousCommand;
