@@ -48,6 +48,10 @@ public class DriveSub extends Subsystem {
 
   // Uses existing Mecanum drive as arcade drive by removing strafe axis
   public void myArcadeDrive(double ySpeed, double xSpeed) {
-    myDrive.driveCartesian(ySpeed, 0, xSpeed);
+    myDrive.driveCartesian(-ySpeed, 0, xSpeed);
+  }
+
+  public void myMecanumDrive(double xSpeed, double ySpeed, double zSpeed) {
+    myDrive.driveCartesian(-ySpeed, xSpeed, zSpeed);
   }
 }

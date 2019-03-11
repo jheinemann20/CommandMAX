@@ -53,7 +53,7 @@ public class OI {
 	// OI constructor method
   public OI()
   {
-    shiftButton.whenPressed(command);
+    shiftButton.toggleWhenPressed(command);
   }
 
 }
